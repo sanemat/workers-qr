@@ -1,0 +1,20 @@
+{
+  "name": "@sanemat/workers-qr",
+  "description": "",
+  "version": "0.1.0",
+  "author": "Matt (Sanemat) <o.gata.ken@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/sanemat/workers-qr/issues"
+  },
+  "homepage": "https://github.com/sanemat/workers-qr#readme",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
+  },
+  "scripts": {
+    "test": "exit 1"
+  }
+}
