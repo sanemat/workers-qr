@@ -21,6 +21,7 @@ coverage
 
 # API keys and secrets
 .env
+.envrc
 
 # Dependency directory
 node_modules
