@@ -21,6 +21,8 @@
     "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
   },
   "scripts": {
+    "build": "tsc",
+    "prebuild": "del dist",
     "prettier": "prettier --write src/*.ts tsconfig.json",
     "test": "exit 1"
   }
