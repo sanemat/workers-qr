@@ -6,6 +6,12 @@
   "bugs": {
     "url": "https://github.com/sanemat/workers-qr/issues"
   },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
+    "del-cli": "^3.0.1",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  },
   "homepage": "https://github.com/sanemat/workers-qr#readme",
   "license": "Apache-2.0",
   "main": "index.js",
@@ -15,6 +21,7 @@
     "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
   },
   "scripts": {
+    "prettier": "prettier --write src/*.ts tsconfig.json",
     "test": "exit 1"
   }
 }
