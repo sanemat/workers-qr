@@ -24,6 +24,7 @@
     "build": "tsc",
     "prebuild": "del dist",
     "prettier": "prettier --write src/*.ts tsconfig.json",
-    "test": "exit 1"
+    "prettier:ci": "prettier src/*.ts tsconfig.json --list-different",
+    "test": "npm run prettier:ci"
   }
 }
