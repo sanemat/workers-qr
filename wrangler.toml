@@ -1,6 +1,6 @@
 name = "workers-qr"
 type = "javascript"
-account_id = ""
+account_id = "5a574e64f22df036827e09caf5cca8fd"
 workers_dev = true
 route = ""
 zone_id = ""
