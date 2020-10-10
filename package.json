@@ -24,12 +24,12 @@
     "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rollup -c",
     "deploy": "wrangler publish",
     "prebuild": "del dist",
     "predeploy": "npm run build",
-    "prettier": "prettier --write src/*.ts tsconfig.json",
-    "prettier:ci": "prettier src/*.ts tsconfig.json --list-different",
+    "prettier": "prettier --write src/*.ts tsconfig.json *.js",
+    "prettier:ci": "prettier src/*.ts tsconfig.json *.js --list-different",
     "test": "npm run prettier:ci"
   }
 }
