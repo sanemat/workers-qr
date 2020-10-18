@@ -9,6 +9,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^2.0.0",
     "@cloudflare/wrangler": "^1.11.0",
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
     "del-cli": "^3.0.1",
     "prettier": "^2.1.2",
     "rollup": "^2.32.0",
@@ -33,5 +35,8 @@
     "prettier:ci": "prettier src/*.ts tsconfig.json *.js --list-different",
     "serve": "rollup -c --watch & wrangler dev",
     "test": "npm run prettier:ci"
+  },
+  "dependencies": {
+    "is-relative-url": "^3.0.0"
   }
 }
