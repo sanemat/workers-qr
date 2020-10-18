@@ -1,4 +1,4 @@
-const isRelativeUrl = require("is-relative-url");
+import isRelativeUrl from "is-relative-url";
 
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
