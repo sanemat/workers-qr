@@ -1,4 +1,4 @@
-const bs58 = require("bs58");
+import bs58 from "bs58";
 
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
