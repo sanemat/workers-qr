@@ -1,4 +1,4 @@
-const qr = require("qr-image");
+import qr from "qr-image";
 
 const generate = async (request: Request) => {
   const { text } = await request.json();
