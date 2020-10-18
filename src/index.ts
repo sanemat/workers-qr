@@ -1,3 +1,12 @@
+const qr = require("qr-image");
+
+const generate = async (request: Request) => {
+  const { text } = await request.json();
+  const headers = { "Content-Type": "image/png" };
+  const qr_png = qr.imageSync(text || "https://workers.dev");
+  return new Response(qr_png, { headers });
+};
+
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
