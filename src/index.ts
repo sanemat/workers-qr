@@ -1,9 +1,11 @@
 import qr from "qr-image";
 
 const generate = async (request: Request) => {
-  // const { text } = await request.json();
+  const searchParams = new URL(request.url).searchParams;
+  const text = searchParams.get("text");
+
   const headers = { "Content-Type": "image/png" };
-  const qr_png = qr.imageSync("https://workers.dev");
+  const qr_png = qr.imageSync(text || "https://workers.dev");
   return new Response(qr_png, { headers });
 };
 
