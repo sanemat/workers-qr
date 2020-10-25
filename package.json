@@ -29,13 +29,13 @@
     "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build": "webpack",
     "deploy": "wrangler publish",
     "prebuild": "del dist",
     "predeploy": "npm run build",
     "prettier": "prettier --write src/*.ts tsconfig.json *.js",
     "prettier:ci": "prettier src/*.ts tsconfig.json *.js --list-different",
-    "serve": "rollup -c --watch & wrangler dev",
+    "serve": "webpack --watch & wrangler dev",
     "test": "npm run prettier:ci"
   },
   "dependencies": {
