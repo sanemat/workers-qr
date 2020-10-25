@@ -22,20 +22,20 @@
   },
   "homepage": "https://github.com/sanemat/workers-qr#readme",
   "license": "Apache-2.0",
-  "main": "dist/index.js",
+  "main": "dist/bundle.js",
   "private": true,
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/sanemat/workers-qr.git"
   },
   "scripts": {
-    "build": "webpack",
+    "build": "tsc && webpack",
     "deploy": "wrangler publish",
     "prebuild": "del dist",
     "predeploy": "npm run build",
     "prettier": "prettier --write src/*.ts tsconfig.json *.js",
     "prettier:ci": "prettier src/*.ts tsconfig.json *.js --list-different",
-    "serve": "webpack --watch & wrangler dev",
+    "serve": "tsc --watch & webpack --watch & wrangler dev",
     "test": "npm run prettier:ci"
   },
   "dependencies": {
