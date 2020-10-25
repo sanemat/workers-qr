@@ -1,4 +1,3 @@
-import isRelativeUrl from "is-relative-url";
 import qr from "qr-image";
 
 const generate = async (request: Request) => {
@@ -16,6 +15,5 @@ addEventListener("fetch", (event) => {
  * @param {Request} request
  */
 async function handleRequest(request: Request) {
-  console.log(isRelativeUrl("foo/bar"));
   return await generate(request);
 }
