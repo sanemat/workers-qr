@@ -3,4 +3,5 @@ module.exports = {
   output: {
     filename: "bundle.js",
   },
+  target: ["web", "es2020"],
 };
