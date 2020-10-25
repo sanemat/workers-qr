@@ -1,4 +1,12 @@
 import isRelativeUrl from "is-relative-url";
+import qr from "qr-image";
+
+const generate = async (request: Request) => {
+  const { text } = await request.json();
+  const headers = { "Content-Type": "image/png" };
+  const qr_png = qr.imageSync(text || "https://workers.dev");
+  return new Response(qr_png, { headers });
+};
 
 addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
@@ -9,6 +17,7 @@ addEventListener("fetch", (event) => {
  */
 async function handleRequest(request: Request) {
   console.log(isRelativeUrl("foo/bar"));
+  await generate(request);
   return new Response("Hello worker!", {
     headers: { "content-type": "text/plain" },
   });
