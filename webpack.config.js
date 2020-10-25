@@ -1,3 +1,5 @@
+const webpack = require("webpack");
+
 module.exports = {
   entry: "./dist/index.js",
   output: {
@@ -12,4 +14,5 @@ module.exports = {
       stream: require.resolve("stream-browserify"),
     },
   },
+  plugins: [new webpack.ProvidePlugin({ process: "process/browser" })],
 };
