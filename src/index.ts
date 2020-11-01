@@ -1,10 +1,13 @@
 import qr from "qr-image";
+import Jimp from "jimp";
 
 const generate = async (request: Request) => {
   // const { text } = await request.json();
   const headers = { "Content-Type": "image/png" };
   const qr_png = qr.imageSync("https://workers.dev");
-  return new Response(qr_png, { headers });
+  const buf = await Jimp.read(qr_png);
+  const manipulated = await buf.getBufferAsync(Jimp.MIME_PNG);
+  return new Response(manipulated, { headers });
 };
 
 addEventListener("fetch", (event) => {
