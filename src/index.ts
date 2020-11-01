@@ -1,5 +1,5 @@
 import qr from "qr-image";
-import Jimp from "jimp";
+import Jimp from "jimp/es";
 
 const generate = async (request: Request) => {
   // const { text } = await request.json();

@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const path = require("path");
 
 module.exports = {
   entry: "./dist/index.js",
@@ -7,6 +8,9 @@ module.exports = {
   },
   target: ["web", "es2020"],
   resolve: {
+    alias: {
+      fs: path.resolve(__dirname, "./src/null.js"),
+    },
     fallback: {
       zlib: require.resolve("browserify-zlib"),
       assert: require.resolve("assert/"),
