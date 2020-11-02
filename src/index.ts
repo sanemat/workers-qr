@@ -1,4 +1,5 @@
 import qr from "qr-image";
+import { PNG } from "pngjs/browser";
 
 const generate = async (request: Request) => {
   // const { text } = await request.json();
