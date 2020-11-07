@@ -1,9 +1,7 @@
-import qr from "qr-image";
-
 const generate = async (request: Request) => {
   // const { text } = await request.json();
   const headers = { "Content-Type": "image/png" };
-  const qr_png = qr.imageSync("https://workers.dev");
+  const qr_png = "dummy";
   return new Response(qr_png, { headers });
 };
 
