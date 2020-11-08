@@ -4,4 +4,9 @@ module.exports = {
     filename: "bundle.js",
   },
   target: ["web", "es2020"],
+  resolve: {
+    fallback: {
+      buffer: require.resolve("buffer/"),
+    },
+  },
 };

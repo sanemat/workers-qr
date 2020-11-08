@@ -7,6 +7,7 @@
     "url": "https://github.com/sanemat/workers-qr/issues"
   },
   "dependencies": {
+    "buffer": "^6.0.1",
     "pngjs": "^6.0.0"
   },
   "devDependencies": {
