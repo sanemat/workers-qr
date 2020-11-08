@@ -1,3 +1,5 @@
+import { PNG } from "pngjs";
+
 const generate = async (request: Request) => {
   // const { text } = await request.json();
   const data =
@@ -9,9 +11,19 @@ const generate = async (request: Request) => {
   for (let i = 0; i < byteString.length; i++) {
     intArray[i] = byteString.charCodeAt(i);
   }
+  let w = 32;
+  let h = 64;
+  let png = new PNG({
+    width: w,
+    height: h,
+    bitDepth: 16,
+    colorType: 6,
+    inputColorType: 6,
+    inputHasAlpha: true,
+  });
 
   const headers = { "Content-Type": "image/png" };
-  return new Response(intArray, { headers });
+  return new Response(PNG.sync.write(png), { headers });
 };
 
 addEventListener("fetch", (event) => {
