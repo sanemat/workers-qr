@@ -9,6 +9,7 @@ module.exports = {
       buffer: require.resolve("buffer/"),
       util: require.resolve("util/"),
       zlib: require.resolve("browserify-zlib"),
+      assert: require.resolve("assert/"),
     },
   },
 };
