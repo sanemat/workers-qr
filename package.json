@@ -7,6 +7,7 @@
     "url": "https://github.com/sanemat/workers-qr/issues"
   },
   "dependencies": {
+    "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.1",
     "pngjs": "^6.0.0",
     "util": "^0.12.3"

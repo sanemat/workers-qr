@@ -8,6 +8,7 @@ module.exports = {
     fallback: {
       buffer: require.resolve("buffer/"),
       util: require.resolve("util/"),
+      zlib: require.resolve("browserify-zlib"),
     },
   },
 };
