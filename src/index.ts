@@ -1,8 +1,17 @@
 const generate = async (request: Request) => {
   // const { text } = await request.json();
+  const data =
+    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==";
+  const b64String = data.split(",")[1];
+  const byteString = atob(b64String);
+  const arrayBuffer = new ArrayBuffer(byteString.length);
+  let intArray = new Uint8Array(arrayBuffer);
+  for (let i = 0; i < byteString.length; i++) {
+    intArray[i] = byteString.charCodeAt(i);
+  }
+
   const headers = { "Content-Type": "image/png" };
-  const qr_png = "dummy";
-  return new Response(qr_png, { headers });
+  return new Response(intArray, { headers });
 };
 
 addEventListener("fetch", (event) => {
