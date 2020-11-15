@@ -2,6 +2,12 @@ import * as png from "@vivaxy/png";
 
 const generate = async (request: Request) => {
   // const { text } = await request.json();
+  const palette: [number, number, number, number][] = [
+    [255, 0, 0, 255],
+    [0, 255, 0, 255],
+    [0, 0, 255, 255],
+    [255, 255, 255, 127],
+  ];
   const meta = {
     width: 2,
     height: 2,
@@ -10,12 +16,7 @@ const generate = async (request: Request) => {
     compression: 0,
     interlace: 0,
     filter: 0,
-    palette: [
-      [255, 0, 0, 255],
-      [0, 255, 0, 255],
-      [0, 0, 255, 255],
-      [255, 255, 255, 127],
-    ],
+    palette: palette,
     sRGB: 1,
     physicalDimensions: {
       pixelPerUnitX: 2835,
@@ -26,7 +27,6 @@ const generate = async (request: Request) => {
   };
 
   const headers = { "Content-Type": "image/png" };
-  // @ts-ignore
   return new Response(png.encode(meta), { headers });
 };
 
