@@ -26,6 +26,7 @@ const generate = async (request: Request) => {
   };
 
   const headers = { "Content-Type": "image/png" };
+  // @ts-ignore
   return new Response(png.encode(meta), { headers });
 };
 
