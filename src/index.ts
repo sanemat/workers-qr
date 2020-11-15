@@ -1,29 +1,33 @@
-import { PNG } from "pngjs";
+import * as png from "@vivaxy/png";
 
 const generate = async (request: Request) => {
   // const { text } = await request.json();
-  const data =
-    "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg==";
-  const b64String = data.split(",")[1];
-  const byteString = atob(b64String);
-  const arrayBuffer = new ArrayBuffer(byteString.length);
-  let intArray = new Uint8Array(arrayBuffer);
-  for (let i = 0; i < byteString.length; i++) {
-    intArray[i] = byteString.charCodeAt(i);
-  }
-  let w = 32;
-  let h = 64;
-  let png = new PNG({
-    width: w,
-    height: h,
-    bitDepth: 16,
-    colorType: 6,
-    inputColorType: 6,
-    inputHasAlpha: true,
-  });
+  const palette: [number, number, number, number][] = [
+    [255, 0, 0, 255],
+    [0, 255, 0, 255],
+    [0, 0, 255, 255],
+    [255, 255, 255, 127],
+  ];
+  const meta = {
+    width: 2,
+    height: 2,
+    depth: 2,
+    colorType: 3,
+    compression: 0,
+    interlace: 0,
+    filter: 0,
+    palette: palette,
+    sRGB: 1,
+    physicalDimensions: {
+      pixelPerUnitX: 2835,
+      pixelPerUnitY: 2835,
+      unit: 1,
+    },
+    data: [255, 0, 0, 255, 0, 255, 0, 255, 0, 0, 255, 255, 255, 255, 255, 127],
+  };
 
   const headers = { "Content-Type": "image/png" };
-  return new Response(PNG.sync.write(png), { headers });
+  return new Response(png.encode(meta), { headers });
 };
 
 addEventListener("fetch", (event) => {
