@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^3.4.0",
-    "@cloudflare/wrangler": "^1.19.9",
+    "@cloudflare/wrangler": "^1.19.11",
     "concurrently": "^7.1.0",
     "del-cli": "^4.0.1",
     "prettier": "^2.6.2",
