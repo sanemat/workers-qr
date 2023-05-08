@@ -17,7 +17,7 @@
     "prettier": "^2.8.4",
     "typescript": "^5.0.4",
     "webpack": "^5.82.0",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.1.0"
   },
   "homepage": "https://github.com/sanemat/workers-qr#readme",
   "license": "Apache-2.0",
