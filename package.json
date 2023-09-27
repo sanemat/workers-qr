@@ -16,7 +16,7 @@
     "del-cli": "^5.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.1.6",
-    "webpack": "^5.83.1",
+    "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
   "homepage": "https://github.com/sanemat/workers-qr#readme",
